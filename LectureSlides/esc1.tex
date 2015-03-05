@@ -1,0 +1,273 @@
+%\documentclass{beamer}
+\documentclass[xcolor=dvipsnames]{beamer}
+\usepackage[latin1]{inputenc}
+\usepackage{hyperref}
+\usecolortheme[named=Violet]{structure}
+\usetheme{Warsaw}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% "define" julia
+\lstdefinelanguage{julia}{morekeywords={function,if,else,elseif,while,for,:,end}, sensitive=true, morecomment=[l]{\#}, morestring=[b]"}
+
+% Default settings for code listings
+\lstset{frame=tb,
+   language=julia,
+   aboveskip=3mm,
+   belowskip=3mm,
+   showstringspaces=false,
+   columns=flexible,
+   basicstyle={\small\ttfamily},
+   numbers=none,
+   frame=none,
+   numberstyle=\tiny\color{gray},
+   keywordstyle=\color{blue},
+   commentstyle=\color{dkgreen},
+   stringstyle=\color{mauve},
+   breaklines=true,
+   breakatwhitespace=true
+   tabsize=3
+}
+
+%\lstset{frame=tb,
+%  language=Python,
+%  aboveskip=3mm,
+%  belowskip=3mm,
+%  showstringspaces=false,
+%  columns=flexible,
+%  basicstyle={\small\ttfamily},
+%  numbers=none,
+%  numberstyle=\tiny\color{gray},
+%  keywordstyle=\color{blue},
+%  commentstyle=\color{dkgreen},
+%  stringstyle=\color{mauve},
+%  breaklines=true,
+%  breakatwhitespace=true
+%  tabsize=3
+%}
+
+\title[Scientific Computing]{Elements of Scientific Computing with Julia}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Today's Class}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+\section{What is Scientific Computing?}
+\begin{frame}[fragile]
+{\bf Scientific Computing}
+Scientific computing is the process of coming up with algorithms and computer programs to solve quantitative and qualitative problems arising in areas such as the engineering and behavioral sciences, as well as biology and finance.\\ 
+\vfill
+\pause
+A lot of interesting problems in these areas do not have exact or analytic solutions. Scientists must rely on numerical methods for approximating these solutions.\\
+\end{frame}
+
+\begin{frame}[fragile]
+{\bf Math + CS}
+Scientific Computing techniques draw from mathematics and computer science:
+\begin{enumerate}
+\item Math will give us the theory and the ability to come up with the appropriate models and numerical techniques for solving a problem; as to which element is in a given spot in a set.
+\item CS will give us the algorithmic and programming tools for putting our models to work efficiently.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+{\bf What we'll cover:}
+\begin{enumerate}
+\item Numerical Integration
+\item Stencil Computation
+\item Numerical Linear Algebra
+\item Numerical Optimization
+\item Linear Regression
+\item Logistic Regression
+\item And More..
+\end{enumerate}
+\vfill
+\pause
+Notice that these are not the conventional topics covered in a more stereotypical scientific computing course. My goal is for this course to serve as a general overview of computational methods from scientific computing, statistical computing and machine learning.
+\end{frame}
+
+\begin{frame}
+{\bf Good Computational Scientists care about...}
+the programming language they should use: it needs to be high performing and flexible, while not being painful to use.\\
+\vfill
+\pause
+In this course we will use Julia, a high performing and dynamic programming language. It's syntax is friendly and flexible for programming scientific computing algorithms.\\
+\vfill
+\pause
+More information on Julia can be found at \href{http://julialang.org/}{julialang.org}\\
+\end{frame}
+
+\begin{frame}[fragile]
+{\bf Good Computational Scientists care about...}
+presentation, collaboration and revision control.
+\vfill
+\pause
+Scientists must make sense of their mathematical models and computational results, then present their results in a clean, standard and modular format via the use of tools such as \LaTeX $\;$ (for typesetting documents) and \verb+git+ (for revision control).
+\end{frame}
+
+\section{Installation and Tools Set-Up}
+\begin{frame}[fragile]
+{\bf Our computational scientist's tool box}
+\begin{enumerate}
+\item {\it\large Mathematical tools}: will be acquired through the lectures, homeworks, required and optional readings.
+\pause
+\item {\it\large Julia}: a high performing technical computing programming language.
+\pause
+\item {\it\large Git}: a revision control and source code management system focused on speed, widely used for sharing source code and keeping track of different versions of computer programming projects.
+\pause
+\item {\it\large GitHub}: a web-based hosting service for computer programming projects using the Git RCS. 
+\pause
+\item \LaTeX: a document markup language that uses the \TeX $\;$ typesetting program for formatting text output, it is widely used in academia and for presenting mathematical formulas on various websites. 
+\end{enumerate}
+\end{frame}
+
+\section{Approximations, Errors, and IJulia}
+\begin{frame}[fragile]
+{\bf Good enough?}
+Scientific computing is all about approximations, and approximations produce errors! 
+\vfill
+\pause
+The source of inexactness can come from any stage in the process of formulating and solving a scientific computing problem: \pause
+\begin{enumerate}
+\item usage of simplified model (since there are many complexities in real world problems that are difficult to account for); \pause
+\item our measurement equipment have finite precision or we were not able to gather that much data anyway; \pause
+\item we may have to discretize a continuous problem in order to solve it; \pause
+\item truncation and rounding will happen due to computer precision.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+{\bf Error Analysis}
+We must study the effect of approximations and computational errors on our results in order to better understand our results. Such study is called \emph{error analysis}.\\
+\end{frame}
+
+\begin{frame}
+{\bf Example } 
+Consider computing the surface area of the Earth by using the formula: $A = 4\pi r^2$.\\
+\begin{itemize}
+\item This formula gives the surface area of a perfect sphere, which is not necessarily the true shape of the Earth; \pause
+\item The radius of the Earth is based on a combination of measurements taken by equipment of finite precision; \pause
+\item $\pi$ is a transcendental infinite quantity, but it will have to be truncated at some point; \pause
+\item The final result will be rounded by our computers depending on their precision.\\
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+{\bf Total Error}
+A scientific computing problem can be view as computing the value of a function $f: \mathbf{R} \rightarrow \mathbf{R}$.
+\vfill
+\pause
+If we denote the true value of the input data by $x$, the true result by $f(x)$, the inexact input by $\hat{x}$ and the approximated function by $\hat{f}$, then:
+\vfill
+\pause
+Total Error = $\hat{f}(\hat{x}) - f(x) = (\hat{f}(\hat{x}) - f(\hat{x})) + (f(\hat{x}) - f(x))$  = computational error + propagated data error.\\
+\end{frame}
+
+\begin{frame}
+{\bf Computational versus Data Error}
+That is, the difference between using the approximate function and the exact function on the same input is a \emph{computational error}. 
+\vfill
+\pause
+While the difference between using the exact function on inexact input versus exact input is called a pure \emph{data error}.\\
+\end{frame}
+
+\begin{frame}
+{\bf Computational Error}
+Computational Error will be either truncation or rounding errors. {\it Note: data error may have more to do with other biases or limitations in collecting the data, we won't talk much it. } 
+\begin{enumerate}
+\item{Truncation error} is the difference between the result we get after truncating an infinite series (or other infinite quantities) and the result that would be produced if we were to use exact arithmetic. \item{Rounding error} is the difference between the result we get due to using finite precision computers and the result that would be produced if we were to use exact arithmetic. Thus, \emph{computational error} is the sum of these two errors.\\
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+{\bf Absolute versus Relative Error}
+We can represent errors from numerical computations in either \emph{absolute} or \emph{relative} form:
+\pause
+\begin{center}
+\emph{Absolute error} = approximate value - true value\\
+\emph{Relative error} = (approximate value - true value)/true value
+\end{center}
+\pause
+Note that the relative error can be seen as a percentage of the true value, if we multiply it by 100.\\
+\end{frame}
+
+\begin{frame}
+{\bf Condition Number}
+Besides analyzing the error of a approximate solution, it is also wise to understand the conditioning of our model. 
+\vfill
+\pause
+A problem is \emph{well-conditioned} if a relative change in the input date causes a similar relative change in the solution. 
+\vfill
+\pause
+While an \emph{ill-conditioned} problem is one where a relative change in the input data causes a much larger relative change in the solution.
+\vfill 
+\end{frame}
+
+\begin{frame}
+{\bf Condition Number}
+Given these definitions, we can calculate the condition number of a problems as follows (we denote it by $\mathcal{K}$):
+\[\mathcal{K} = \frac{|\textnormal{relative change in solution}|}{|\textnormal{relative change in input data}|} = \frac{|(f(\hat{x})-f(x))/f(x)|}{|(\hat{x}-x)/x|}\]
+\end{frame}
+
+\begin{frame}
+{\bf Example } As an illustrative example, consider the problem of computing the values of $y = \cos(x)$ near $\pi/2$. \vfill \pause Let $x = \pi/2$ and let $h$ be a small perturbation to $x$. Then we have:
+\pause
+\begin{center}
+\emph{Absolute error} = $\cos(x+h) - \cos(x) \approx -h\sin(x) \approx -h$
+\end{center}
+\pause
+\vfill
+This follows by the definition of the derivative: \\
+\hfill $\displaystyle f'(x) = \lim\limits_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h}$. 
+\end{frame}
+
+\begin{frame}
+{\bf Example cont.}
+On the other hand we have \vfill \pause
+\emph{Relative error} = \\
+\[\frac{\cos(x+h) - \cos(x)}{\cos(x)} \approx -h\frac{\sin(x)}{\cos(x)} = -h\tan(x) \approx \infty\]
+
+\vfill
+\pause
+Note that a small change in the input data for $\cos(x)$ near $\pi/2$, causes a large relative change in the output, regardless of how we computed it.
+\end{frame}
+
+\begin{frame}
+{\bf Activity} 
+Let's write a Julia program to compute the mathematical constant $e$, the base of natural logarithms, from the definition:
+\[ e = \lim\limits_{n \rightarrow \infty} (1+1/n)^n \]
+\vfill
+\pause
+We will compute $(1 + 1/n)^n$ for $n = 10^k$, $k = 1, 2, ..., 20$. Our goal will be to determine the error in the successive approximations we get by comparing them with the value of the built in constant $e$. 
+\vfill
+\pause
+A question for us to think about: do you think the error always decreases as n increases? \\
+\end{frame}
+
+\begin{frame}[fragile]
+{\bf Activity}
+Enter the following code into IJulia:
+\begin{lstlisting}
+for k = 1:20
+    a = (1+1/(10^k))^(10^k)
+    err = a - e
+    @printf("For k = %d, we get the approximation: 
+             %1.12f and the error %1.12f \n", 
+             k, a, err)
+end
+\end{lstlisting}
+Then discuss your results and conclusions on Canvas.
+\end{frame}
+\end{document}

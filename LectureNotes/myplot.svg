@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="120mm" height="60mm" viewBox="0 0 120 60" style="stroke:black;fill:black" stroke-width="0.5">
+<g class="plotroot xscalable yscalable">
+  <g stroke="none" font-family="'PT Sans','Helvetica Neue','Helvetica',sans-serif" fill="#4C404B" font-size="3.18" class="guide ylabels">
+    <text x="23.7" y="12.47" text-anchor="end" style="dominant-baseline:central">80</text>
+    <text x="23.7" y="18.97" text-anchor="end" style="dominant-baseline:central">60</text>
+    <text x="23.7" y="31.97" text-anchor="end" style="dominant-baseline:central">20</text>
+    <text x="23.7" y="38.47" text-anchor="end" style="dominant-baseline:central">0</text>
+    <text x="23.7" y="25.47" text-anchor="end" style="dominant-baseline:central">40</text>
+    <text x="23.7" y="5.97" text-anchor="end" style="dominant-baseline:central">100</text>
+  </g>
+  <g stroke="none" font-family="'PT Sans','Helvetica Neue','Helvetica',sans-serif" fill="#362A35" font-size="3.88">
+    <text x="8.63" y="22.22" text-anchor="middle" style="dominant-baseline:central" transform="rotate(-90, 8.63, 22.22)">Income</text>
+  </g>
+  <g stroke="none" font-family="'PT Sans','Helvetica Neue','Helvetica',sans-serif" fill="#4C404B" font-size="3.18" class="guide xlabels">
+    <text x="27.25" y="44.74" text-anchor="middle">10</text>
+    <text x="112.44" y="44.74" text-anchor="middle">25</text>
+    <text x="55.65" y="44.74" text-anchor="middle">15</text>
+    <text x="84.05" y="44.74" text-anchor="middle">20</text>
+  </g>
+  <g stroke="none" font-family="'PT Sans','Helvetica Neue','Helvetica',sans-serif" fill="#362A35" font-size="3.88">
+    <text x="69.85" y="53" text-anchor="middle">Education</text>
+  </g>
+  <g>
+    <g clip-path="url(#clippath1)">
+      <g stroke="#F1F1F5" fill="#000000" class="guide background">
+        <path d="M24.7,5 L 115 5 115 39.44 24.7 39.44 z" />
+      </g>
+      <g stroke="#F0F0F3" stroke-width="0.2" class="guide ygridlines xfixed">
+        <path d="M24.7,57.96 L 115 57.96" />
+        <path d="M24.7,-26.52 L 115 -26.52" />
+        <path d="M24.7,-13.52 L 115 -13.52" />
+        <path d="M24.7,-0.52 L 115 -0.52" />
+        <path d="M24.7,77.45 L 115 77.45" />
+        <path d="M24.7,31.97 L 115 31.97" />
+        <path d="M24.7,64.46 L 115 64.46" />
+        <path d="M24.7,-20.02 L 115 -20.02" />
+        <path d="M24.7,5.97 L 115 5.97" />
+        <path d="M24.7,25.47 L 115 25.47" />
+        <path d="M24.7,51.46 L 115 51.46" />
+        <path d="M24.7,38.47 L 115 38.47" />
+        <path d="M24.7,44.96 L 115 44.96" />
+        <path d="M24.7,-33.01 L 115 -33.01" />
+        <path d="M24.7,-7.02 L 115 -7.02" />
+        <path d="M24.7,18.97 L 115 18.97" />
+        <path d="M24.7,12.47 L 115 12.47" />
+        <path d="M24.7,70.96 L 115 70.96" />
+      </g>
+      <g stroke="#F0F0F3" stroke-width="0.2" class="guide xgridlines yfixed">
+        <path d="M-1.14,5 L -1.14 39.44" />
+        <path d="M112.44,5 L 112.44 39.44" />
+        <path d="M55.65,5 L 55.65 39.44" />
+        <path d="M-29.54,5 L -29.54 39.44" />
+        <path d="M169.24,5 L 169.24 39.44" />
+        <path d="M226.03,5 L 226.03 39.44" />
+        <path d="M140.84,5 L 140.84 39.44" />
+        <path d="M197.63,5 L 197.63 39.44" />
+        <path d="M84.05,5 L 84.05 39.44" />
+        <path d="M-86.33,5 L -86.33 39.44" />
+        <path d="M27.25,5 L 27.25 39.44" />
+        <path d="M-57.94,5 L -57.94 39.44" />
+      </g>
+    </g>
+    <g clip-path="url(#clippath2)">
+      <g class="plotpanel">
+        <g stroke-width="0.3">
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="27.25" cy="29.8" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="29.53" cy="29.59" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="32.04" cy="31.27" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="34.32" cy="31.59" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="36.6" cy="33.53" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="39.11" cy="29.89" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="41.39" cy="32.8" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="43.67" cy="30.18" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="45.94" cy="26.48" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="48.45" cy="25.58" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="50.73" cy="27.29" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="53.01" cy="24.98" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="55.52" cy="23.85" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="57.8" cy="23.18" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="60.08" cy="22.79" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="62.58" cy="19.93" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="64.86" cy="21.74" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="67.14" cy="18.54" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="69.65" cy="19.76" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="71.93" cy="16.19" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="74.21" cy="17.57" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="76.72" cy="16.06" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="78.99" cy="14.22" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="81.27" cy="15.12" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="83.55" cy="13.74" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="86.06" cy="13.85" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="88.34" cy="14.91" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="90.62" cy="13.33" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="93.13" cy="15.03" r="0.6" />
+          </g>
+          <g stroke="#CF7E00" stroke-width="0.3" fill="#FFA500" class="geometry color_RGB(1.0,0.6470588235294118,0.0)_">
+            <circle cx="95.41" cy="12.39" r="0.6" />
+          </g>
+        </g>
+        <g stroke="#FFFFFF" stroke-width="0.3" fill="none" class="geometry">
+          <path d="M27.25,33.08 L 29.53 32.35 32.04 31.55 34.32 30.82 36.6 30.09 39.11 29.29 41.39 28.56 43.67 27.83 45.94 27.1 48.45 26.3 50.73 25.57 53.01 24.84 55.52 24.03 57.8 23.3 60.08 22.57 62.58 21.77 64.86 21.04 67.14 20.31 69.65 19.51 71.93 18.78 74.21 18.05 76.72 17.25 78.99 16.52 81.27 15.79 83.55 15.06 86.06 14.25 88.34 13.52 90.62 12.79 93.13 11.99 95.41 11.26" />
+        </g>
+      </g>
+    </g>
+    <g clip-path="url(#clippath3)">
+    </g>
+  </g>
+</g>
+<defs>
+<clipPath id="clippath1">
+  <path d="M24.7,5 L 115 5 115 39.44 24.7 39.44" />
+</clipPath
+><clipPath id="clippath2">
+  <path d="M24.7,5 L 115 5 115 39.44 24.7 39.44" />
+</clipPath
+><clipPath id="clippath3">
+  <path d="M24.7,5 L 115 5 115 39.44 24.7 39.44" />
+</clipPath
+></defs>
+</svg>

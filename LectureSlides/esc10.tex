@@ -1,0 +1,140 @@
+%\documentclass{beamer}
+\documentclass[xcolor=dvipsnames]{beamer}
+\usepackage[latin1]{inputenc}
+\usepackage{hyperref}
+\usecolortheme[named=Violet]{structure}
+\usetheme{Warsaw}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{framed}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% "define" julia
+\lstdefinelanguage{julia}{morekeywords={function,if,else,while,for,:,end}, sensitive=true, morecomment=[l]{\#}, morecomment=[s]{/*}{*/}, morestring=[b]"}
+
+% Default settings for code listings
+\lstset{frame=tb,
+   language=julia,
+   aboveskip=3mm,
+   belowskip=3mm,
+   showstringspaces=false,
+   columns=flexible,
+   basicstyle={\small\ttfamily},
+   numbers=none,
+   frame=none,
+   numberstyle=\tiny\color{gray},
+   keywordstyle=\color{blue},
+   commentstyle=\color{dkgreen},
+   stringstyle=\color{mauve},
+   breaklines=true,
+   breakatwhitespace=true
+   tabsize=3
+}
+
+\hypersetup{colorlinks=true}
+
+\title[Scientific Computing]{Elements of Scientific Computing with Julia}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Today's Class}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+\section{What We've Learned}
+\begin{frame}
+{\bf Traditional Scientific Computing}
+We've learned a lot this quarter! From traditional scientific computing: \pause
+\begin{itemize}
+\item The nature and importance of errors in scientific computing;\pause
+\item Quadrature methods for numerical integration;\pause
+\item Numerical differentiation with the Finite Difference Method;\pause
+\item Linear algebra concepts and performing matrix computations;
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+{\bf Statistical Learning}
+From machine learning and statistics: \pause
+\begin{itemize}
+\item How to perform quantitative regression analysis;\pause
+\item How to perform qualitative regression analysis (or classification);\pause
+\item Application of the gradient descent algorithm to find the least-squares solution to problems;\pause
+\item How recommender systems work;
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+{\bf Important Tools}
+We've also added some important tools in our computer scientist tool-box: \pause
+\begin{itemize}
+\item Julia - a young and promising scientific computing language;\pause
+\item git - a widely used (in both industry and academia) versioning system;\pause
+\item \LaTeX - a typesetting language to make elegant documents and presentation (most relevant for research and publishing);\pause
+\item Packages for plotting and making programming visual and easy, so as a scientist you can focus on the problem at hand;
+\end{itemize}
+\end{frame}
+
+\section{What's Next}
+\begin{frame}
+{\bf Traditional Scientific Computing}
+We've learned a lot this quarter! But there is lots more to learn: \pause
+\begin{itemize}
+\item The details of \href{https://www.cise.ufl.edu/~mssz/CompOrg/CDA-arith.html}{computer arithmetic};\pause
+\item \href{https://en.wikipedia.org/wiki/Taylor_series}{Taylor series} function approximation; \pause
+\item ODE's and PDE's with the \href{https://en.wikipedia.org/wiki/Finite_element_method}{Finite Element Method};\pause
+\item Fast \href{https://en.wikipedia.org/wiki/Fourier_series}{Fourier} Transforms;\pause
+\item Different \href{https://en.wikipedia.org/wiki/Matrix_decomposition}{matrix factorization} methods such as QR, Cholesky and SVD;\pause
+\end{itemize}
+\emph{Recommendation: }Take a 5 credit scientific computing course (Fall 2014 at \href{http://www.washington.edu/students/crscatb/css.html\#css455}{UWB}). \pause Or start by reading Heath (our course text) and wikipedia to see where that takes you. For those interested in linear algebra, I also recommend: \href{http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617}{Numerical Linear Algebra} by Trefethen and Bau III.
+ 
+\end{frame}
+
+\begin{frame}
+{\bf Statistical Learning}
+From machine learning and statistics: \pause
+\begin{itemize}
+\item \href{https://en.wikipedia.org/wiki/Support_vector_machine}{Support Vector Machine};\pause
+\item \href{https://en.wikipedia.org/wiki/Neural_network}{Neural Networks} (see course schedule at \href{http://www.washington.edu/students/crscatb/css.html\#css485}{UWB});\pause
+\item \href{https://en.wikipedia.org/wiki/Unsupervised_learning}{Unsupervised learning} techniques;\pause
+\item Advanced optimization algorithms;\pause
+\item \href{https://en.wikipedia.org/wiki/Sentiment_analysis}{Sentiment Analysis};\pause
+\item Practical ML techniques: test and cross validation sets, model selection, how to focus your energy when solving a problem;
+\end{itemize}
+
+\emph{Recommendation: }Take a 5 credit machine learning course (Check Graduate Courses Schedule at \href{http://www.washington.edu/students/crscatb/css.html\#css581}{UWB}). \pause \vfill
+
+For those interested in studying more optimization, I recommend starting with \href{http://www.stanford.edu/~boyd/cvxbook/}{Convex Optimization} by Boyd and Vandenberghe. Also, \href{http://www.ece.northwestern.edu/~nocedal/book/num-opt.html}{Numerical Optimization} by Nocedal and Wright is quite good.
+\end{frame}
+
+\begin{frame}
+{\bf Important Tools}
+Other tools that might be worth considering: \pause
+\begin{itemize}
+\item MATLAB/\href{https://gnu.org/software/octave/}{Octave} - the standard language used by the scientific computing community (i.e. if you want do something in MATLAB, chances are that there's a package for that);\pause
+\item \href{http://www.r-project.org/}{R} - the standard language used by the statistics community;\pause
+\item \href{http://mercurial.selenic.com/}{mercurial} - an easier to use versioning system (not as widely used as git however);\pause
+\item \href{https://bitbucket.org/}{Bitbucket} - a web-based hosting service that supports mercurial;\pause
+\item \href{http://www.html5rocks.com/en/features/presentation}{HTML5} - for ``hipper'' looking \href{http://slides.html5rocks.com}{presentations};\pause
+\item Different \href{https://en.wikipedia.org/wiki/Programming_paradigm}{programming paradigms} - more perspective, better programming;
+\end{itemize}
+\emph{Recommendation: } Play around with this stuff!
+\end{frame}
+
+\section{Thank You!}
+\begin{frame}
+{\bf Many Thanks!}
+Finally, I just want to say thank you for participating in my course this quarter. I truly enjoyed teaching it and making all the materials, as well as interacting with all of you! \vfill \pause
+
+We covered a lot of cool and challenging stuff, and I want to thank you for your attention and effort in this course. I hope you will continue studies in one of the many subtopics of scientific computing. Feel free to contact me in the future to exchange ideas!
+\end{frame}
+\end{document}
